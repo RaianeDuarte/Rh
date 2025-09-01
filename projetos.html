@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projetos | Raiane Duarte</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        body {
+            flex-direction: column;
+            background-color: #f5f7fa;
+            padding: 40px 20px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .projects-container {
+            max-width: 900px;
+            width: 100%;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .projects-container h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 28px;
+            color: #222;
+        }
+
+        .project {
+            background-color: #f0f4f9;
+            border-left: 5px solid #0077b5;
+            padding: 20px 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .project:hover {
+            background-color: #e8f1fc;
+        }
+
+        .project h2 {
+            font-size: 18px;
+            color: #0077b5;
+            margin-bottom: 8px;
+        }
+
+        .project p {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 6px;
+        }
+
+        .project ul {
+            margin: 0 0 0 20px;
+            color: #555;
+            font-size: 15px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #0077b5;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+            color: #005b94;
+        }
+
+        @media (max-width: 600px) {
+            .projects-container {
+                padding: 25px 20px;
+            }
+
+            .project h2 {
+                font-size: 16px;
+            }
+
+            .project p, .project ul {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="toggle-theme" onclick="toggleTheme()">🌙 Modo Escuro</button>
+
+    <div class="projects-container">
+        <h1>Projetos Profissionais</h1>
+
+        <div class="project">
+            <h2>Desenvolvimento de Produto – Blue Serum 10 em 1</h2>
+            <p>Responsável pelo desenvolvimento completo do produto <em>Blue Serum 10 em 1</em>, incluindo a análise detalhada do público-alvo, identificação dos benefícios do produto, realização de pesquisa de mercado e elaboração da estratégia de lançamento. O projeto teve como foco garantir que o produto atendesse às necessidades dos consumidores, potencializando sua aceitação e sucesso no mercado.</p>
+            <ul>
+                <li>Definição e segmentação do público-alvo</li>
+                <li>Mapeamento dos benefícios e diferenciais do produto</li>
+                <li>Pesquisa de mercado para entender tendências e concorrência</li>
+                <li>Desenvolvimento da estratégia de lançamento, incluindo posicionamento e comunicação</li>
+            </ul>
+        </div>
+
+        <div class="project">
+            <h2>Desenvolvimento Empresarial – Empresa de Restaurante Japonês</h2>
+            <p>Criação e estruturação de uma empresa fictícia do ramo de restaurante de comida japonesa, com definição clara da missão, visão e valores. Também foi responsável pela identificação do público-alvo e elaboração de uma apresentação focada no tema de rescisão contratual, abordando aspectos legais e organizacionais.</p>
+            <ul>
+                <li>Definição da missão, visão e valores da empresa</li>
+                <li>Segmentação e análise do público-alvo</li>
+                <li>Desenvolvimento de apresentação corporativa com foco em rescisão contratual</li>
+            </ul>
+        </div>
+
+        <div class="project">
+            <h2>Gestão Financeira – Ação Social Educacional</h2>
+            <p>Desenvolvimento de uma ação social voltada para a implementação de cursos extracurriculares gratuitos para crianças e adolescentes em situação de vulnerabilidade social. Responsável pela elaboração do balanço patrimonial, demonstração do resultado do exercício (DRE) e fluxo de caixa, além da análise financeira para verificar a situação de lucro ou prejuízo da organização sem fins lucrativos.</p>
+            <ul>
+                <li>Planejamento e desenvolvimento da ação social</li>
+                <li>Elaboração do balanço patrimonial, DRE e fluxo de caixa</li>
+                <li>Análise financeira da organização sem fins lucrativos</li>
+            </ul>
+        </div>
+
+        <a href="index.html" class="back-link">&larr; Voltar ao perfil</a>
+    </div>
+
+    <script>
+    function toggleTheme() {
+        const body = document.body;
+        body.classList.toggle("dark-mode");
+        const isDark = body.classList.contains("dark-mode");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+
+        const btn = document.querySelector(".toggle-theme");
+        btn.textContent = isDark ? "☀️ Modo Claro" : "🌙 Modo Escuro";
+    }
+
+    window.onload = () => {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "dark") {
+            document.body.classList.add("dark-mode");
+            document.querySelector(".toggle-theme").textContent = "☀️ Modo Claro";
+        }
+    }
+    </script>
+</body>
+</html>
